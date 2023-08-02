@@ -47,7 +47,6 @@ function goToFolder(folderName) {
 
 const sasa = () => {
     const text = document.getElementById('text').value;
-    document.getElementById('test').innerHTML = window.location.href
     if (code.indexOf(text) != -1){
         window.location.href = 'https://docs.google.com/document/d/1CYOHavYNlW_39h1Ar52YqEwJsAhmAD8NcUwNaM1PscU/edit?usp=sharing'
     } else {
