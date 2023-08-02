@@ -32,7 +32,8 @@ const code = [
     '04042004',
     '17302005',
     '30052004',
-    '16062002'
+    '16062002',
+    '23122004'
 ]
 function goToFolder(folderName) {
     // Get the current URL.
