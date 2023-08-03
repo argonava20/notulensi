@@ -1,3 +1,4 @@
+const input = document.getElementById('test');
 const code = [
     '11112003',
     '06032005',
@@ -33,32 +34,77 @@ const code = [
     '17302005',
     '30052004',
     '16062002',
+    '24122005',
+    '09022004',
     '23122004'
 ]
-function goToFolder(folderName) {
-    // Get the current URL.
-    var currentUrl = window.location.href;
-  
-    // Replace the current URL with the URL of the new folder.
-    var newUrl = currentUrl.replace('/index.html', "/" + folderName);
-  
-    // Redirect the user to the new URL.
-    window.location.href = newUrl;
+const access = {
+    '20232024': 'https://www.youtube.com'
+}
+
+const muzz = {
+    'theadams': 'kons.mp3'
+}
+
+function openNewTab(url) {
+    setTimeout(() => {
+        window.open(url, '_blank');
+    }, 1000)
   }
 
-const sasa = () => {
-    const text = document.getElementById('text').value;
-    if (code.indexOf(text) != -1){
-        window.location.href = 'https://docs.google.com/document/d/1CYOHavYNlW_39h1Ar52YqEwJsAhmAD8NcUwNaM1PscU/edit?usp=sharing'
+const tot = [...Object.keys(access), ...Object.keys(muzz), ...code];
+const text = document.getElementById('text');
+
+function playAudio(file) {
+    const audio = new Audio(file);
+    audio.loop = true;
+    audio.play();
+  }
+const checkCode = (a, b) => {
+    if (a.indexOf(b) != -1) {
+        return true;
+    }
+    return false;
+}
+const load = () => {
+    if (checkCode(tot, text.value)) {
+        document.getElementById('test').style.color = 'green'
     } else {
-        document.getElementById('test').innerHTML = 'awas ada penyusup 🤯'
-        setTimeout(() => {
-            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs'
-        }, 500)
+        document.getElementById('test').style.color = 'red'
+    }
+    setTimeout(() => {
+        document.getElementById('test').innerHTML = ''
+    }, 10000);
+}
+const redirect = () => {
+    if (checkCode(code, text.value)) {
+        document.getElementById('test').innerHTML = 'welcome, argonava 20!'
+        openNewTab('https://docs.google.com/document/d/1CYOHavYNlW_39h1Ar52YqEwJsAhmAD8NcUwNaM1PscU/edit?usp=sharing')
+    } if(checkCode(Object.keys(access), text.value)){
+        openNewTab(access[text.value])
+        document.getElementById('test').innerHTML = 'code detected, opening tab...'
+    } if (checkCode(Object.keys(muzz), text.value)){
+        playAudio(muzz[text.value])
+        document.getElementById('test').innerHTML = 'enjoy!'
+    } else {
+        document.getElementById('test').innerHTML = 'invalid code'
     }
 }
-document.getElementById('text').addEventListener('keydown', () => {
-    if (event.key == 'Enter') {
-        sasa()
+
+const process = () => {
+    load()
+    redirect()
+}
+    document.getElementById('text').addEventListener('keydown', () => {
+        if (event.key == 'Enter') {
+            process()
+        }
+    })
+text.addEventListener('input', () => {
+    if(text.value.length >= 8){
+        process()
     }
 })
+setInterval(() => {
+    document.getElementById('text').focus()
+}, 4)
