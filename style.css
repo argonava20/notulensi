@@ -5,9 +5,14 @@
     user-select:none;
     cursor:unset;
     margin: 0.1rem;
+    scrollbar-width: none;
+    scrollbar-color: #ffffff #ffffff;
 }
 *::selection{
     background-color: #ffffff;
+}
+*::-webkit-scrollbar{
+    display: none;
 }
 input{
     font-size:0.8rem;
@@ -31,4 +36,9 @@ body{
 #test{
     font-size: 70%;
     font-family:monospace
+}
+iframe{
+    margin:auto;
+    width: 50vw;
+    height: 60vw;
 }

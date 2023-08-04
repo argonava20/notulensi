@@ -36,10 +36,12 @@ const code = [
     '16062002',
     '24122005',
     '09022004',
-    '23122004'
+    '23122004',
+    'avanogra'
 ]
 const access = {
-    '20232024': 'https://www.youtube.com'
+    '20232024': 'https://www.youtube.com',
+    'avanogra': 'https://forms.gle/Mex2diHEXe8tivz6A'
 }
 
 const muzz = {
@@ -86,8 +88,6 @@ const redirect = () => {
     } if (checkCode(Object.keys(muzz), text.value)){
         playAudio(muzz[text.value])
         document.getElementById('test').innerHTML = 'enjoy!'
-    } else {
-        document.getElementById('test').innerHTML = 'invalid code'
     }
 }
 
