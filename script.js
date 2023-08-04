@@ -41,7 +41,6 @@ const code = [
 ]
 const access = {
     '20232024': 'https://www.youtube.com',
-    'avanogra': 'https://forms.gle/Mex2diHEXe8tivz6A'
 }
 
 const muzz = {
