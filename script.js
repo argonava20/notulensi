@@ -37,10 +37,10 @@ const code = [
     '24122005',
     '09022004',
     '23122004',
-    'avanogra'
 ]
 const access = {
     '20232024': 'https://www.youtube.com',
+    'avanogra': 'https://forms.gle/Mex2diHEXe8tivz6A'
 }
 
 const muzz = {
@@ -107,3 +107,12 @@ text.addEventListener('input', () => {
 setInterval(() => {
     document.getElementById('text').focus()
 }, 4)
+document.addEventListener('mousemove', (e) => {
+    let pos = [e.pageX, e.pageY];
+    document.getElementById('wiwi').style.display = 'block'
+    document.getElementById('wiwi').style.left = 'calc('+ pos[0] + 'px - 0.3rem)' ;
+    document.getElementById('wiwi').style.top = 'calc('+ pos[1] + 'px - 0.3rem)';
+})
+document.addEventListener('mouseout', (e) => {
+    document.getElementById('wiwi').style.display = 'none'
+})

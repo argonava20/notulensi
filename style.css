@@ -2,9 +2,8 @@
     font-size: 3vw;
 }
 *{
-    
-    user-select:none;
     cursor:none;
+    user-select:none;
     margin: 0.1rem;
     scrollbar-width: none;
     scrollbar-color: #ffffff #ffffff;
@@ -42,4 +41,14 @@ iframe{
     margin:auto;
     width: 50vw;
     height: 60vw;
+}
+#wiwi{
+    display: none;
+    width:0.6rem;
+    height:0.6rem;
+    border-radius: 50%;
+    background-color: #d10000f1;
+    position: fixed;
+    top:0;
+    left:0;
 }
