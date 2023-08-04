@@ -2,8 +2,9 @@
     font-size: 3vw;
 }
 *{
+    
     user-select:none;
-    cursor:unset;
+    cursor:none;
     margin: 0.1rem;
     scrollbar-width: none;
     scrollbar-color: #ffffff #ffffff;
