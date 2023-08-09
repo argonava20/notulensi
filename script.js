@@ -37,8 +37,12 @@ const code = [
     '24122005',
     '09022004',
     '23122004',
+    '02032005',
+    '19082005',
+    '24092005',
+    '27012006',
     '08122004',
-    '05092004'
+    '05092004',
 ]
 const access = {
     '20232024': 'https://www.youtube.com',
@@ -89,6 +93,8 @@ const redirect = () => {
     } if (checkCode(Object.keys(muzz), text.value)){
         playAudio(muzz[text.value])
         document.getElementById('test').innerHTML = 'enjoy!'
+    } if(checkCode(tot, text.value)){
+        document.getElementById('test').innerHTML = 'code not found'
     }
 }
 
